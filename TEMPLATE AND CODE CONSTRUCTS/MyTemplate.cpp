@@ -172,15 +172,21 @@ ll modpow(ll a, ll p, ll mod){ll ret = 1; while(p){if(p & 1){ret = ret * a % mod
 
 
 int main()
-{
-        cin.tie(0)->sync_with_stdio(0);
-        cin.exceptions(ios::badbit | ios::failbit);
-
+{          
         // #ifndef ONLINE_JUDGE
-            // freopen("input.txt","r",stdin);
-            // freopen("output.txt","w",stdout);
+        // freopen("input.txt","r",stdin);
+        // freopen("output.txt","w",stdout);
         // #endif
-
+        
+        cin.tie(0)->sync_with_stdio(0);
+        cin.exceptions(ios::badbit | ios::failbit);    
+        
+        
+        
+    
+    
+    
+    
         
 
 
