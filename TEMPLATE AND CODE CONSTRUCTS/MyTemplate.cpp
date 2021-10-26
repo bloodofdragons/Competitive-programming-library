@@ -95,7 +95,7 @@ template<typename T> void view(T e)
 }
 template<typename T, typename K> void view(pair<T, K> e)
 {
-    std::cerr << "(" << e.fi << ", " << e.se << ")" << endl;
+    std::cerr << "(" << e.first << ", " << e.second << ")" << endl;
 }
 template<typename T> void view(const set<T> &st)
 {
