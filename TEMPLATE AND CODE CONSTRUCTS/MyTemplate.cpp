@@ -8,20 +8,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-// #include <ext/pb_ds/assoc_container.hpp>
-// #include <ext/pb_ds/tree_policy.hpp>
-// using namespace __gnu_pbds;
-
-// template <typename T>
-// using ordered_set =
-//     tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+// PRAGMAS
+// #pragma GCC optimize("unroll-loops")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,fma,abm,mmx,avx,avx2,tune=native")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,fma,abm,mmx,avx,avx2")
+// #pragma GCC target("avx2")
+// #pragma GCC optimize("Ofast")
 
 
 using ll = long long ;
 using ull = unsigned long long;
 using lld = long double;
-
 
 // pairs
 using pii = pair<int, int>;
@@ -35,6 +32,15 @@ using vbool = vector<bool>;
 using vstring = vector<string>;
 using vpii = vector<pair<int, int>>;
 using vpll = vector<pair<long long, long long>>;
+
+// Multidimensional vectors
+using vvi = vector<vector<int>>;
+using vvll = vector<vector<long long>>;
+using vvchar = vector<vector<char>>;
+
+// priority queue
+template <class T> using pq = priority_queue<T>;
+template <class T> using pqg = priority_queue<T, vector<T>, greater<T>>;
 
 
 // pairs,map,set
@@ -57,6 +63,10 @@ using vpll = vector<pair<long long, long long>>;
 #define   all(v)  v.begin(),v.end()
 #define   rall(v) v.rbegin(),v.rend()
 
+#define MIN(v) *min_element(all(v))
+#define MAX(v) *max_element(all(v))
+#define lbind(c, x) distance((c).begin(), lower_bound(all(c), (x)))
+#define ubind(c, x) distance((c).begin(), upper_bound(all(c), (x)))
 
 // Loops --> take care of the reverse ones
 #define rep(i,a,n)              for(int i = a ; i< n ; i++)
@@ -162,36 +172,78 @@ void readpairs(T &arr)
     foreach(i, arr) cin >> i.first >> i.second;
 }
 
+// reading a 2-D vector
+template<class T>
+void readgrid(T &arr, int n, int m)
+{
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+}
+
+
 //-------------------------MATHEMATICAL ALGORITHMS--------------------------//
 
-ll power(ll a, ll p){ll ret = 1; while(p){if(p & 1){ret = ret * a;} a = a * a; p >>= 1;} return ret;}
-ll modpow(ll a, ll p, ll mod){ll ret = 1; while(p){if(p & 1){ret = ret * a % mod;} a = a * a % mod; p >>= 1;} return ret;}
+ll power(ll a, ll p)
+{
+    ll ret = 1;
+    while(p)
+    {
+        if(p & 1)
+        {
+            ret = ret * a;
+        }
+        a = a * a;
+        p >>= 1;
+    }
+    return ret;
+}
+ll modpow(ll a, ll p, ll mod)
+{
+    ll ret = 1;
+    while(p)
+    {
+        if(p & 1)
+        {
+            ret = ret * a % mod;
+        }
+        a = a * a % mod;
+        p >>= 1;
+    }
+    return ret;
+}
 
 
 //--------------------------------------------------------------------------//
 
 
 int main()
-{          
-        // #ifndef ONLINE_JUDGE
-        // freopen("input.txt","r",stdin);
-        // freopen("output.txt","w",stdout);
-        // #endif
-        
-        cin.tie(0)->sync_with_stdio(0);
-        cin.exceptions(ios::badbit | ios::failbit);    
-        
-        
-        
-    
-    
-    
-    
-        
+{
+    /*
+        #ifndef ONLINE_JUDGE
+        freopen("input.txt","r",stdin);
+        freopen("output.txt","w",stdout);
+        #endif
+    */
+
+    cin.tie(0)->sync_with_stdio(0);
+    cin.exceptions(ios::badbit | ios::failbit);
 
 
 
 
 
-        return 0;
+
+
+
+
+
+
+
+
+    return 0;
 }
