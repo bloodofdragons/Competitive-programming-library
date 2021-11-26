@@ -46,7 +46,7 @@ int main()
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(ios::badbit | ios::failbit);
 
-    max_queue<int> q;
+    Max_Queue<int> q;
 
     q.push(10);
     q.push(-1);
