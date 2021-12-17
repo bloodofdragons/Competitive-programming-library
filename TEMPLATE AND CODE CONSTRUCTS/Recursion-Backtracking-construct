@@ -1,0 +1,16 @@
+BASE CASE --> Check some condition / increment or decrement something and return from there.
+
+ENUMERATE THE MOVES --> In this step we enumerate through all the possible moves.
+
+IS THIS MOVE POSSIBLE --> In this step we check whether the move we are going to make is possible or not. (by checking some condition or constraints)
+
+WHAT IF THE MOVE IS POSSIBLE ??
+
+1- Do the move.
+2- Move to the next choices you have.
+3- Remove the move. (Backtracking step i.e. return to the previous state)
+
+
+
+Note:- We are doing the "Remove the move" step because if the move we made did not satisfy the conditions then we have to make the current state of the problem
+       to the previous state from we came.
