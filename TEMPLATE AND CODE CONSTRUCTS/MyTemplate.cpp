@@ -1,8 +1,6 @@
 /***
-
  *  Author:- Rajat Shahi (Blood_Of_Dragons)
  *  It's just the beginning .... Wait !!!  Have patience !!!
-
 ***/
 
 #include<bits/stdc++.h>
@@ -143,6 +141,10 @@ template<typename T> void view(const std::vector<std::vector<T> > &vv)
     cerr << endl;
 }
 
+void debug_name(string s)
+{
+    cerr<<"This is output for :  "<<s<<endl;
+}
 
 //----------------------READING VECTORS AND PAIRS-------------------------//
 
@@ -157,6 +159,7 @@ template<class T>
 void writearray(T &arr)
 {
     foreach(i, arr) cout << i << " ";
+    cout<<endl;
 }
 
 template<class T>
@@ -185,6 +188,41 @@ void readgrid(T &arr, int n, int m)
     }
 }
 
+// printing a 2D grid
+template<class T>
+void writegrid(T &arr,int n,int m)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            cout<<arr[i][j]<<" ";
+        }
+
+        cout<<endl;
+    }
+}
+
+// printing a vector of pairs
+template<class T>
+void writepairs(T& arr)
+{
+    foreach(i,arr) cout<<i.first<<" "<<i.second<<endl;
+}
+
+// reading a single pair
+template<class T,class U>
+void readpair(pair<T,U>& p)
+{
+    cin>>p.first>>p.second;
+}
+
+// writing a single pair
+template<class T,class U>
+void writepair(pair<T,U>& p)
+{
+    cout<<p.first<<" "<<p.second<<endl;
+}
 
 //-------------------------MATHEMATICAL ALGORITHMS--------------------------//
 
@@ -233,12 +271,7 @@ int main()
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(ios::badbit | ios::failbit);
 
-
-
-
-
-
-
+    
 
 
 
