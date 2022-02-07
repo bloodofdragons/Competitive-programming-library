@@ -85,5 +85,44 @@
 :~ Complete graph :- Every two node should have edge between them. 
                      A complete graph of 'n' nodes is represented by K(n).
 
+
+-----------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------
+
+REPRESENTATION OF GRAPHS :- 
+
+1- Adjacency matrix : If there are 'N' nodes then create a matrix of VxV and intialize all the values to 0.
+                      If there is an edge from 'a' to 'b' then, set MATRIX[a][b] = 1.
+
+                      If directed, MATRIX[a][b] = 1
+                      If Undirected , MATRIX[a][b] = MATRIX[b][a] = 1 
+        
+
+2- Adjacency List : Store the neigbours of each node at that index. Create an array of vector/list.
+                    Basically it's used for sparse graphs because it takes less memory. 
+
+                    On codeforces if N<=10^5 then we can create a matrix of NxN due to memory limit.
+                    
+                    vector<int> adj_list[N+1] ; // 1 indexed nodes
+
+                    If there is an edge from 'a' to 'b',
+
+                    if directed,   adj_list[a].push_back(b);
+                    if Undirected, adj_list[a].push_back(b); adj_list[b].push_back(a);
+
+
+3- Edge list : Store the vector of edge. Edges are of the the form (a,b) if there is an edge from 'a' to 'b'.
+               
+               vector<pair<int,int>> edge_list; 
+
+
+NOTE :- Adjacency list is mostly used because mostly we have sparse graphs in problems. And also we can use any
+        representation but the time to process the graph is dependent on the representation which we are using.
+        So, we have to choose it wisely.
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+
                      
 
