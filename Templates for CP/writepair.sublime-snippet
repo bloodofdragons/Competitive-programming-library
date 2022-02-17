@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+cout << $1.first << " " << $1.second << endl;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>writepair</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
