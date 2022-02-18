@@ -1,4 +1,6 @@
-// comp -> component number
+vector<int> visited;
+
+// visited store the comp number of each node
 void dfs(int node, int comp)
 {
     visited[src] = comp;
