@@ -1,3 +1,4 @@
+// comp -> component number
 void dfs(int node, int comp)
 {
     visited[src] = comp;
