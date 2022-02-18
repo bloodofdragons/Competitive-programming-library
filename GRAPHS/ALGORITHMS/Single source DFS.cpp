@@ -3,7 +3,7 @@ vector<int> visited;
 // visited store the comp number of each node
 void dfs(int node, int curr_comp)
 {
-    visited[src] = curr_comp;
+    visited[node] = curr_comp;
 
     for (auto && i : g[node])
     {
