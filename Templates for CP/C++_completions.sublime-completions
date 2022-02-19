@@ -19,9 +19,9 @@
         { "trigger": "perej", "contents": "for(auto ${1:j} = ${2:n }; $1 >= ${3:0}; ${4:-- $1})\n{\n\t$0\n}"},
         { "trigger": "perek", "contents": "for(auto ${1:k} = ${2:n }; $1 >= ${3:0}; ${4:-- $1})\n{\n\t$0\n}"},
         
-        { "trigger": "readarray", "contents": "for(auto i = 0; i < n; i++)\n{\n\tcin >> $1[i] ;\n}"},
-        { "trigger": "readapairs", "contents": "for(auto i = 0; i < n; i++)\n{\n\tcin >> $1[i].first >> $1[i].second ;\n}"},
-        { "trigger": "readgrid", "contents": "for(auto i = 0; i < n; i++)\n{\n\tfor(auto j = 0 ;j < n; j++)\n\t{\n\t\tcin >> $1[i][j] ;\n\t}\n}"},
+        { "trigger": "readarray", "contents": "for(auto i = 0; i < n; i++)\n{\n\tcin >> $0[i] ;\n}"},
+        { "trigger": "readapairs", "contents": "for(auto i = 0; i < n; i++)\n{\n\tcin >> $0[i].first >> $0[i].second ;\n}"},
+        { "trigger": "readgrid", "contents": "for(auto i = 0; i < n; i++)\n{\n\tfor(auto j = 0 ;j < n; j++)\n\t{\n\t\tcin >> $0[i][j] ;\n\t}\n}"},
         
         
         
@@ -146,7 +146,7 @@
         { "trigger": "pop_back", "contents": "pop_back();"},
         
         { "trigger": "push_front", "contents": "push_front($1);" },
-        { "trigger": "pop_front", "contents": "pop_back();"},
+        { "trigger": "pop_front", "contents": "pop_front();"},
         { "trigger": "emplace_back", "contents": "emplace_back($1);" },
         { "trigger": "front", "contents": "front()"},
         { "trigger": "back", "contents": "back()"},
