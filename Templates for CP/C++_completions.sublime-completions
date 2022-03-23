@@ -2,13 +2,15 @@
     "scope":"source.c++",
     "completions":
     [
-        { "trigger": "repi", "contents": "for(auto i = 0; i < n; i++)\n{\n\t$0\n}"},
-        { "trigger": "repj", "contents": "for(auto j = 0; j < n; j++)\n{\n\t$0\n}"},
-        { "trigger": "repk", "contents": "for(auto k = 0; k < n; k++)\n{\n\t$0\n}"},
+        { "trigger": "repi", "contents": "for(auto ${1:i} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\t$0\n}"},
+        { "trigger": "repj", "contents": "for(auto ${1:j} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\t$0\n}"},
+        { "trigger": "repk", "contents": "for(auto ${1:k} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\t$0\n}"},
+
+        { "trigger": "repei", "contents": "for(auto ${1:i} = ${2:0}; $1 <= ${3:n}; ${4:$1++})\n{\n\t$0\n}"},
+        { "trigger": "repej", "contents": "for(auto ${1:j} = ${2:0}; $1 <= ${3:n}; ${4:$1++})\n{\n\t$0\n}"},
+        { "trigger": "repek", "contents": "for(auto ${1:k} = ${2:0}; $1 <= ${3:n}; ${4:$1++})\n{\n\t$0\n}"},
         
-        { "trigger": "repei", "contents": "for(auto i = 0; i <= n; i++)\n{\n\t$0\n}"},
-        { "trigger": "repej", "contents": "for(auto j = 0; j <= n; j++)\n{\n\t$0\n}"},
-        { "trigger": "repek", "contents": "for(auto k = 0; k <= n; k++)\n{\n\t$0\n}"},
+        
         
         { "trigger": "peri", "contents": "for(auto ${1:i} = ${2:n - 1}; $1 >= ${3:0}; ${4:-- $1})\n{\n\t$0\n}"},
         { "trigger": "perj", "contents": "for(auto ${1:j} = ${2:n - 1}; $1 >= ${3:0}; ${4:-- $1})\n{\n\t$0\n}"},
@@ -19,14 +21,19 @@
         { "trigger": "perej", "contents": "for(auto ${1:j} = ${2:n }; $1 >= ${3:0}; ${4:-- $1})\n{\n\t$0\n}"},
         { "trigger": "perek", "contents": "for(auto ${1:k} = ${2:n }; $1 >= ${3:0}; ${4:-- $1})\n{\n\t$0\n}"},
         
-        { "trigger": "readarray", "contents": "for(auto i = 0; i < n; i++)\n{\n\tcin >> $0[i] ;\n}"},
-        { "trigger": "readapairs", "contents": "for(auto i = 0; i < n; i++)\n{\n\tcin >> $0[i].first >> $0[i].second ;\n}"},
-        { "trigger": "readgrid", "contents": "for(auto i = 0; i < n; i++)\n{\n\tfor(auto j = 0 ;j < n; j++)\n\t{\n\t\tcin >> $0[i][j] ;\n\t}\n}"},
-        
-        
-        
-        { "trigger": "fordr", "contents": "for(auto [di, dj]: dr){\n\tint ni = i + di, nj = j + dj;\n\tif(0 <= min(ni, nj) && ni < h && nj < w){\n\t\t$0\n\t}\n}"},
-        { "trigger": "foreach", "contents": "for(auto&& $1: $2){\n\t$0\n}"},
+        {"trigger": "testcases","contents": "int _t;\ncin >> _t;\n\nwhile(_t--)\n{\n\t$0\n}"},
+
+
+        { "trigger": "readarray", "contents": "for(auto ${1:i} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\tcin >> $0[i] ;\n}"},
+        { "trigger": "readpairs", "contents": "for(auto ${1:i} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\tcin >> $0[i].first >> $0[i].second ;\n}"},
+        { "trigger": "readgrid", "contents": "for(auto ${1:i} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\tfor(auto ${5:j} = ${6:0}; $5 < ${7:m}; ${8:$5++})\n\t{\n\t\tcin >> $0[i][j] ;\n\t}\n}"},
+        { "trigger": "readpair", "contents": "cin >> $0.first >> $0.second ;"},
+        { "trigger": "writepair", "contents": "cout << $0.first << $0.second ;"},
+        { "trigger": "writearray", "contents": "for(auto ${1:i} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\tcout << $5[i] << $6 << endl;\n}"},
+        { "trigger": "writepairs", "contents": "for(auto ${1:i} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\tcout << $5[i].first << $6 << $5[i].second << endl;\n}"},
+        { "trigger": "writegrid", "contents": "for(auto ${1:i} = ${2:0}; $1 < ${3:n}; ${4:$1++})\n{\n\tfor(auto ${5:j} = ${6:0}; $5 < ${7:m}; ${8:$5++})\n\t{\n\t\tcout << $0[i][j] ;\n\t}\n\tcout << endl;\n}"},
+
+        { "trigger": "foreach", "contents": "for\n(auto&& $1: $2){\n\t$0\n}"},
 
 
         { "trigger": "while", "contents": "while($1)\n{\n\t$0\n}"},
@@ -42,9 +49,15 @@
         { "trigger": "return", "contents": "return $1;"},
         { "trigger": "exit", "contents": "exit(0);"},
 
-        { "trigger": "dr4", "contents": "static const vector<pair<int, int>> dr{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};"},
-        { "trigger": "dr8", "contents": "static const vector<pair<int, int>> dr{{1, 0}, {1, 1}, {0, 1}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}};"},
+        { "trigger": "dr4", "contents": "static const vector<int> dx = {1 ,-1, 0, 0};\nstatic const vector<int> dy = {0, 0, 1, -1};"},
+
+        { "trigger": "dr8", "contents": "static const vector<int> dx = {1, -1, 0, 0, 1, -1, 1, -1};\nstatic const vector<int> dy = {0, 0, 1, -1, 1, -1, -1, 1};"},
         
+        { "trigger": "fordr4", "contents": "for(${1:dir} = 0; $1 < 4; $1++)\n{\n\t$0\n}"},
+
+        { "trigger": "fordr8", "contents": "for(${1:dir} = 0; $1 < 8; $1++)\n{\n\t$0\n}"},
+
+
         { "trigger": "sort", "contents": "sort($1.begin(),$1.end());"},
         
         { "trigger": "reverse", "contents": "reverse($1.begin(),$1.end());"},
@@ -58,6 +71,8 @@
         
         { "trigger": "max_element", "contents": "max_element($1.begin(),$1.end());"},
         { "trigger": "min_element", "contents": "min_element($1.begin(),$1.end());"},
+        { "trigger": "get_max", "contents": "*max_element($1.begin(),$1.end());"},
+        { "trigger": "get_min", "contents": "*min_element($1.begin(),$1.end());"},
         { "trigger": "binary_search", "contents": "binary_search($1.begin(),$1.end(), $3);"},
         { "trigger": "lower_bound", "contents": "lower_bound($1.begin(),$1.end(), $3);"},
         { "trigger": "upper_bound", "contents": "upper_bound($1.begin(),$1.end(), $3);"},
@@ -94,8 +109,12 @@
         { "trigger": "lld","contents":"long double"},
         
         
-        { "trigger": "ump", "contents": "unordered_map"},     
+        { "trigger": "ump", "contents": "unordered_map<${1:int},${2:int}> ${3:ump}"},
+        { "trigger": "map", "contents": "map<${1:int},${2:int}> ${3:mp}"},
+             
         { "trigger": "ust", "contents": "unordered_set"},
+
+        { "trigger": "yesno", "contents": "if($1)\n{\n\tcout << $2 << endl;\n}\nelse\n{\n\tcout<< $3 << endl;\n}"},
 
         { "trigger": "pii", "contents": "pair<int, int>"},
         { "trigger": "pil", "contents": "pair<int, long long>"},
@@ -169,7 +188,7 @@
         { "trigger": "inf", "contents": "1001001001"},
         { "trigger": "INF", "contents": "1001001001001001001ll"},
         { "trigger": "dinf", "contents": "const int inf = 1001001001;"},
-        { "trigger": "dINF", "contents": "const long long INF = 01001001001001001001ll;"},
+        { "trigger": "dINF", "contents": "const long long INF = 1001001001001001001ll;"},
           
         // for dynamic programming
         { "trigger": "dpll1", "contents": "vector<long long> $1(def_size,-1) ;"},
