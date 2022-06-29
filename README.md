@@ -1,2 +1,1 @@
-# ALGORITHMS
-This repository contains various algorithms. It also contains some algorithms (code snippets) which are commonly seen in competitive programming contests.
+This repository contains implementations of Data structures and algorithmic techniques which i use in competitive programming.
